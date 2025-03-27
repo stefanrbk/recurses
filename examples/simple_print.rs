@@ -6,9 +6,9 @@ fn main() -> i32
     print!(scr, row/2,(col-msg.len())/2,"%s",msg);/* print the message at the center of the screen */
     println!(scr, row-2,0,"This screen has %d rows and %d columns",row,col);
     print!(scr, "Try resizing your window(if possible) and then run this program again");
- refresh();
- getch();
- endwin();
+    scr.refresh();
+    getch();
+    scr.close();
 
- return 0;
+    return 0;
 }
