@@ -15,9 +15,9 @@ fn main() -> i32 {
 					 * charachters might have been printed
 					 * on screen			*/
 	else
-	{	printw("The pressed key is ");
-		attron(A_BOLD);
-		printw("%c", ch);
+	{	print!(scr, "The pressed key is ");
+		scr.set_attr(Bold);
+		print("%c", ch);
 		attroff(A_BOLD);
 	}
 	refresh();			/* Print it on to the real screen */
