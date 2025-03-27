@@ -1,11 +1,11 @@
 fn main() -> i32 {
 
-	let mut scr = init_screen();/* Start curses mode 	*/
+	let mut scr = init_screen();/* Start curses mode */
 	raw();				/* Line buffering disabled	*/
 	keypad(stdscr, TRUE);		/* We get F1, F2 etc..		*/
 	noecho();			/* Don't echo() while we do getch */
 
-    	printw("Type any character to see it in bold\n");
+    	println!(scr, "Type any character to see it in bold");
 	ch = getch();			/* If raw() hadn't been called
 					 * we have to press enter before it
 					 * gets to the program 		*/
