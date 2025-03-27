@@ -1,5 +1,4 @@
-fn main() -> i32
-{	int ch;
+fn main() -> i32 {
 
 	initscr();			/* Start curses mode 		*/
 	raw();				/* Line buffering disabled	*/
