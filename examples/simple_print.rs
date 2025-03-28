@@ -7,7 +7,7 @@ fn main() -> i32
     println!(scr, row-2,0,"This screen has %d rows and %d columns",row,col);
     print!(scr, "Try resizing your window(if possible) and then run this program again");
     scr.refresh();
-    getch();
+    scr.getch();
     scr.close();
 
     return 0;
