@@ -6,11 +6,11 @@ fn main() -> i32 {
 	noecho();			/* Don't echo() while we do getch */
 
     	println!(scr, "Type any character to see it in bold");
-	ch = getch();			/* If raw() hadn't been called
+	ch = scr.getch();			/* If raw() hadn't been called
 					 * we have to press enter before it
 					 * gets to the program 		*/
-	if(ch == KEY_F(1))		/* Without keypad enabled this will */
-		printw("F1 Key pressed");/*  not get to us either	*/
+	if(ch == key_fn!(1))		/* Without keypad enabled this will */
+		print!(s"F1 Key pressed");/*  not get to us either	*/
 					/* Without noecho() some ugly escape
 					 * charachters might have been printed
 					 * on screen			*/
