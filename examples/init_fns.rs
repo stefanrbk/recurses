@@ -17,8 +17,8 @@ fn main() -> i32 {
 	else
 	{	scr.print("The pressed key is ")
 		    .attr_on(Attr::BOLD)
-		    .print(for"%c", ch);
-		scr.attr_off(Bold);
+		    .print(format!("%c", ch))
+		    .attr_off(Attr::BOLD);
 	}
 	scr.refresh();			/* Print it on to the real screen */
     	scr.getch();			/* Wait for user input */
