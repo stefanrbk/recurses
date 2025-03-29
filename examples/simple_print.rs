@@ -7,7 +7,7 @@ fn main() -> i32
         .mvprintln(row-2,0,format!("This screen has %d rows and %d columns",row,col))
         .print("Try resizing your window(if possible) and then run this program again")
         .refresh()
-        .getch()
+        .getanych()
         .close();
 
     return 0;
