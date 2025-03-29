@@ -1,9 +1,9 @@
 fn main() -> i32 {
- let msg = "Enter a string: ";/* message to be appeared on the screen */
+    let msg = "Enter a string: ";/* message to be appeared on the screen */
  
- let mut scr = init_screeb();/* start the curses mode */
- let (row, cogetmaxyx(stdscr,row,col);		/* get the number of rows and columns */
- mvprintw(row/2,(col-strlen(mesg))/2,"%s",mesg);
+    let mut scr = init_screeb();/* start the curses mode */
+    let (row, col) = scr.getmaxyx();/* get the number of rows and columns */
+    let mvprintw(row/2,(col-strlen(mesg))/2,"%s",mesg);
                      		/* print the message at the center of the screen */
  getstr(str);
  mvprintw(LINES - 2, 0, "You Entered: %s", str);
