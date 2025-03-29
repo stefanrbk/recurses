@@ -20,9 +20,9 @@ fn main() -> i32 {
 		    .print(format!("%c", ch))
 		    .attr_off(Attr::BOLD);
 	}
-	scr.refresh();			/* Print it on to the real screen */
-    	scr.getch();			/* Wait for user input */
-	scr.close();			/* End curses mode		  */
+	scr.refresh()/* Print it on to the real screen */
+        .getanych()/* Wait for user input */
+	    .close();/* End curses mode		  */
 
 	return 0;
 }
