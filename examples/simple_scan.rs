@@ -5,7 +5,7 @@ fn main() -> i32 {
     let (row, col) = scr.getmaxyx();/* get the number of rows and columns */
     let str_result = scr.mvprint(row/2,(col-strlen(mesg))/2, format!("%s",mesg))/* print the message at the center of the screen */
         .getstr();
-    scr.mvprint(LINES - 2, 0, "You Entered: %s", str);
+    scr.mvprint(LINES - 2, 0, format!("You Entered: %s", str_result))
  getch();
  endwin();
 
