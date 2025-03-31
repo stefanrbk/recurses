@@ -1,9 +1,7 @@
-int main(int argc, char *argv[])
-{ 
-  int ch, prev, row, col;
-  prev = EOF;
-  FILE *fp;
-  int y, x;
+fn main() -> i32
+{
+    let mut prev = EOF;
+  FIL
 
   if(argc != 2)
   {
