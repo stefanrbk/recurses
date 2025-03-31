@@ -12,9 +12,9 @@ fn main() {
 	let width = 10;
 	let starty = (LINES - height) / 2;	/* Calculating for a center placement */
 	let startx = (COLS - width) / 2;	/* of the window		*/
-	scr.print("Press F1 to exit");
-	refresh();
-	my_win = create_newwin(height, width, starty, startx);
+	scr.print("Press F1 to exit")
+	    .refresh();
+	let mut my_win = Window::new(height, width, starty, startx);
 
 	while((ch = getch()) != KEY_F(1))
 	{	switch(ch)
