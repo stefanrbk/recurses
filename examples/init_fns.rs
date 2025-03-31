@@ -1,4 +1,4 @@
-fn main() -> i32 {
+fn main() {
 
 	let mut scr = init_screen();/* Start curses mode */
 	raw();				/* Line buffering disabled	*/
@@ -23,6 +23,4 @@ fn main() -> i32 {
 	scr.refresh()/* Print it on to the real screen */
         .getanych()/* Wait for user input */
 	    .close();/* End curses mode		  */
-
-	return 0;
 }
