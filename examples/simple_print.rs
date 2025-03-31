@@ -1,4 +1,4 @@
-fn main() -> i32
+fn main()
 {
     let msg = "Just a string";/* message to be appeared on the screen */
     let mut scr = init_screen();				/* start the curses mode */
@@ -9,6 +9,4 @@ fn main() -> i32
         .refresh()
         .getanych()
         .close();
-
-    return 0;
 }
