@@ -1,4 +1,4 @@
-fn main() -> i32 {
+fn main() {
     let msg = "Enter a string: ";/* message to be appeared on the screen */
  
     let mut scr = init_screen();/* start the curses mode */
@@ -8,6 +8,4 @@ fn main() -> i32 {
     scr.mvprint(LINES - 2, 0, format!("You Entered: %s", str_result))
         .getanych()
         .close();
-
- return 0;
 }
