@@ -1,6 +1,7 @@
 fn main() -> i32
 {
-  if(argc != 2)
+    let argc: Vec<String> = env::args().collect();
+if(argc != 2)
   {
     printf("Usage: %s <a c file name>\n", argv[0]);
     exit(1);
