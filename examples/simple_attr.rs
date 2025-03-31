@@ -1,8 +1,5 @@
 fn main() -> i32
 {
-    let mut prev = EOF;
-  FIL
-
   if(argc != 2)
   {
     printf("Usage: %s <a c file name>\n", argv[0]);
