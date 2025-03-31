@@ -1,9 +1,8 @@
 fn main() -> i32
 {
-    let argc: Vec<String> = env::args().collect();
-if(argc != 2)
-  {
-    printf("Usage: %s <a c file name>\n", argv[0]);
+    let args: Vec<String> = env::args().collect();
+    if(args.len() != 2) {
+        print("Usage: %s <a c file name>\n", argv[0]);
     exit(1);
   }
   fp = fopen(argv[1], "r");
