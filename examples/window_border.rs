@@ -1,6 +1,6 @@
 fn main() {
     WINDOW *my_win;
-	int startx, starty, width, height;
+	int startx, starty;
 	int ch;
 
 	let scr = init_screen();			/* Start curses mode 		*/
@@ -8,11 +8,11 @@ fn main() {
 					 * everty thing to me 		*/
 	keypad(stdscr, TRUE);		/* I need that nifty F1 	*/
 
-	height = 3;
-	width = 10;
-	starty = (LINES - height) / 2;	/* Calculating for a center placement */
-	startx = (COLS - width) / 2;	/* of the window		*/
-	printw("Press F1 to exit");
+	let height = 3;
+	let width = 10;
+	let starty = (LINES - height) / 2;	/* Calculating for a center placement */
+	let startx = (COLS - width) / 2;	/* of the window		*/
+	scr.print("Press F1 to exit");
 	refresh();
 	my_win = create_newwin(height, width, starty, startx);
 
