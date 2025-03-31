@@ -16,30 +16,30 @@ fn main() {
 	    .refresh();
 	let mut my_win = create_newwin(height, width, starty, startx);
 
-	while((ch = getch()) != key_fn!(1))
+	while((ch = scr.getch()) != key_fn!(1))
 	{
-	    switch(ch)
-		{	case KEY_LEFT:
+	    match(ch)
+		{
+		    Key::LEFT => {
 				destroy_win(my_win);
 				my_win = create_newwin(height, width, starty,--startx);
-				break;
-			case KEY_RIGHT:
+			},
+			Key::RIGHT => {
 				destroy_win(my_win);
 				my_win = create_newwin(height, width, starty,++startx);
-				break;
-			case KEY_UP:
+			},
+			Key::UP => {
 				destroy_win(my_win);
 				my_win = create_newwin(height, width, --starty,startx);
-				break;
-			case KEY_DOWN:
+			},
+			Key::DOWN => {
 				destroy_win(my_win);
 				my_win = create_newwin(height, width, ++starty,startx);
-				break;	
+			}
 		}
 	}
 		
-	endwin();			/* End curses mode		  */
-	return 0;
+	scr.close();			/* End curses mode		  */
 }
 
 WINDOW *create_newwin(int height, int width, int starty, int startx)
