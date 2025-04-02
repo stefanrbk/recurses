@@ -67,11 +67,11 @@ fn main()
 
 fn init_win_params() -> Window {
     Window {
-	    height: 3;
-	    width: 10;
-	    starty: (LINES - p_win->height)/2;	
-	p_win->startx = (COLS - p_win->width)/2;
-
+	    height: 3,
+	    width: 10,
+	    starty: (LINES - p_win->height)/2,	
+	    startx: (COLS - p_win->width)/2,
+        border: WinBorder {
 	p_win->border.ls = '|';
 	p_win->border.rs = '|';
 	p_win->border.ts = '-';
