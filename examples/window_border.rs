@@ -10,15 +10,14 @@ fn main() {
 
 	let height = 3;
 	let width = 10;
-	let starty = (LINES - height) / 2;	/* Calculating for a center placement */
-	let startx = (COLS - width) / 2;	/* of the window		*/
+	let mut starty = (LINES - height) / 2;	/* Calculating for a center placement */
+	let mut startx = (COLS - width) / 2;	/* of the window		*/
 	scr.print("Press F1 to exit")
 	    .refresh();
 	let mut my_win = create_newwin(height, width, starty, startx);
 
     loop {
         let ch = scr.getch();
-	while((ch = scr.getch()) != key_fn!(1))
 	    match(ch)
 		{
 		    Key::F(n) => {
@@ -27,6 +26,7 @@ fn main() {
 		    }
 		    Key::LEFT => {
 				destroy_win(my_win);
+				start
 				my_win = create_newwin(height, width, starty,--startx);
 			},
 			Key::RIGHT => {
