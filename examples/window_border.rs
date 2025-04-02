@@ -26,19 +26,22 @@ fn main() {
 		    }
 		    Key::LEFT => {
 				destroy_win(my_win);
-				start
-				my_win = create_newwin(height, width, starty,--startx);
+				startx -= 1;
+				my_win = create_newwin(height, width, starty,startx);
 			},
 			Key::RIGHT => {
 				destroy_win(my_win);
-				my_win = create_newwin(height, width, starty,++startx);
+				startx += 1;
+				my_win = create_newwin(height, width, starty,startx);
 			},
 			Key::UP => {
 				destroy_win(my_win);
-				my_win = create_newwin(height, width, --starty,startx);
+				starty -= 1;
+				my_win = create_newwin(height, width, starty,startx);
 			},
 			Key::DOWN => {
 				destroy_win(my_win);
+				start
 				my_win = create_newwin(height, width, ++starty,startx);
 			}
 		}
