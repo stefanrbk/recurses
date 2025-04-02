@@ -75,11 +75,11 @@ fn init_win_params() -> Window {
 	        ls: '|',
 	        rs: '|',
 	        ts: '-',
-	pbs = '-';
-	p_win->border.tl = '+';
-	p_win->border.tr = '+';
-	p_win->border.bl = '+';
-	p_win->border.br = '+';   
+	        bs: '-',
+	        tl: '+',
+	        tr: '+',
+	        bl: '+',
+	        br = '+';   
 	    }
     }
 }
