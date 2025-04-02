@@ -41,8 +41,8 @@ fn main() {
 			},
 			Key::DOWN => {
 				destroy_win(my_win);
-				start
-				my_win = create_newwin(height, width, ++starty,startx);
+				starty += 1;
+				my_win = create_newwin(height, width, starty,startx);
 			}
 		}
 	}
@@ -50,7 +50,7 @@ fn main() {
 	scr.close();			/* End curses mode		  */
 }
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
+fn create_newwin(height: i33, width: i, int starty, int startx) -> Window
 {	WINDOW *local_win;
 
 	local_win = newwin(height, width, starty, startx);
