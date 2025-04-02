@@ -3,10 +3,13 @@ struct WinBorder {
 	pub rs: char;
 	pub ts: char;
 	pub bs: char;
-	pub tl: , tr, bl, br;
+	pub tl: char;
+	pub tr: char;
+	pub bl: char;
+	pub br: char;
 }
 
-typedef struct _WIN_struct {
+typedstruct Win {
 
 	int startx, starty;
 	int height, width;
