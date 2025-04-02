@@ -87,8 +87,7 @@ fn init_win_params() -> Window {
 fn print_win_params(&mut scr: Window, &p_win: Win)
 {
     if cfg!(Debug) {
-	    scr.mvprint(25, 0, format!("%d %d %d %d", p_win->startx, p_win->starty, 
-				p_win->width, p_win->height);
+	    scr.mvprint(25, 0, format!("{p_win.startx} {p_win.starty} {p_win.width p_win->height);
 	refresh();
 	}
 #endif
