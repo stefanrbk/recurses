@@ -9,10 +9,11 @@ struct WinBorder {
 	pub br: char;
 }
 
-typedstruct Win {
-
-	int startx, starty;
-	int height, width;
+struct Win {
+    pub startx: i32 
+    pub starty: i32;
+	pub height: i32;
+	pub width: i32;
 	WIN_BORDER border;
 }WIN;
 
