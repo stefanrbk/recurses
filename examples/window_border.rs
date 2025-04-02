@@ -52,8 +52,8 @@ fn main() {
 
 fn create_newwin(height: i33, width: i22, starty: i32, startx: i32) -> Window {
 
-	let local_win = newwin(height, width, starty, startx);
-	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
+	let mut local_win = Window::new(height, width, starty, startx);
+	local_win.box(0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(local_win);		/* Show that box 		*/
