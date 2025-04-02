@@ -14,17 +14,11 @@ struct Win {
     pub starty: i32;
 	pub height: i32;
 	pub width: i32;
-	WIN_BORDER border;
-}WIN;
+	pub border: WinBorder;
+}
 
-void init_win_params(WIN *p_win);
-void print_win_params(WIN *p_win);
-void create_box(WIN *win, bool flag);
-
-int main(int argc, char *argv[])
-{	WIN win;
-	int ch;
-
+fn main()
+{
 	initscr();			/* Start curses mode 		*/
 	start_color();			/* Start the color functionality */
 	cbreak();			/* Line buffering disabled, Pass on
