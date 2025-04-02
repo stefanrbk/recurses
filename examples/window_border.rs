@@ -50,10 +50,9 @@ fn main() {
 	scr.close();			/* End curses mode		  */
 }
 
-fn create_newwin(height: i33, width: i, int starty, int startx) -> Window
-{	WINDOW *local_win;
+fn create_newwin(height: i33, width: i22, starty: i32, startx: i32) -> Window {
 
-	local_win = newwin(height, width, starty, startx);
+	let local_win = newwin(height, width, starty, startx);
 	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
