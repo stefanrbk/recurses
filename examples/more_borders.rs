@@ -72,14 +72,15 @@ fn init_win_params() -> Window {
 	    starty: (LINES - p_win->height)/2,	
 	    startx: (COLS - p_win->width)/2,
         border: WinBorder {
-	p_win->border.ls = '|';
-	p_win->border.rs = '|';
-	p_win->border.ts = '-';
-	p_win->border.bs = '-';
+	        ls: '|',
+	        rs: '|',
+	        ts: '-',
+	pbs = '-';
 	p_win->border.tl = '+';
 	p_win->border.tr = '+';
 	p_win->border.bl = '+';
 	p_win->border.br = '+';   
+	    }
     }
 }
 void print_win_params(WIN *p_win)
