@@ -34,7 +34,7 @@ fn main()
 	scr.attr_on(Attr::color_pair(1))
 	    .print("Press F1 to exit")
 	    .refresh()
-	    .attroff(COLOR_PAIR(1));
+	    .attr_off(Attr::color_pair(1));
 	
 	create_box(&win, TRUE);
 	while((ch = getch()) != KEY_F(1))
