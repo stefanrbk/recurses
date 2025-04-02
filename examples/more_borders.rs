@@ -93,15 +93,15 @@ fn print_win_params(&mut scr: Window, &p_win: Win)
 }
 
 fn create_box(&mut scr: Window, &p_win: Win, flag: bool) {
-	x = p_win->startx;
-	y = p_win->starty;
-	w = p_win->width;
-	h = p_win->height;
+	x = p_win.startx;
+	y = p_win.starty;
+	w = p_win.width;
+	h = p_win.height;
 
-	if(flag == TRUE)
-	{	mvaddch(y, x, p_win->border.tl);
-		mvaddch(y, x + w, p_win->border.tr);
-		mvaddch(y + h, x, p_win->border.bl);
+	if flag	{
+	    scr.mvaddch(y, x, p_win.border.tl);
+		    .mvaddch(y, x + w, p_win.border.tr);
+		    .mvaddch(y + h, x, p_win->border.bl);
 		mvaddch(y + h, x + w, p_win->border.br);
 		mvhline(y, x + 1, p_win->border.ts, w - 1);
 		mvhline(y + h, x + 1, p_win->border.bs, w - 1);
