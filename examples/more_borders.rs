@@ -1,6 +1,9 @@
 struct WinBorder {
-	pub ls, rs, ts, bs, 
-	 	tl, tr, bl, br;
+	pub ls: char;
+	pub rs: char;
+	pub ts: char;
+	pub bs: char;
+	pub tl: , tr, bl, br;
 }
 
 typedef struct _WIN_struct {
