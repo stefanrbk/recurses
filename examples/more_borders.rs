@@ -92,10 +92,7 @@ fn print_win_params(&mut scr: Window, &p_win: Win)
 	}
 }
 
-void create_box(scr: Window, WIN *p_win, bool flag)
-{	int i, j;
-	int x, y, w, h;
-
+fn create_box(&mut scr: Window, &p_win: Win, flag: bool) {
 	x = p_win->startx;
 	y = p_win->starty;
 	w = p_win->width;
