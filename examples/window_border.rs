@@ -17,8 +17,8 @@ fn main() {
 	let mut my_win = create_newwin(height, width, starty, startx);
 
     loop {
+        let ch = scr.getch();
 	while((ch = scr.getch()) != key_fn!(1))
-	{
 	    match(ch)
 		{
 		    Key::LEFT => {
