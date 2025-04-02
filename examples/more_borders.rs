@@ -19,13 +19,13 @@ struct Win {
 
 fn main()
 {
-	initscr();			/* Start curses mode 		*/
-	start_color();			/* Start the color functionality */
+	let mut scr = init_screen()			/* Start curses mode 		*/
+	    .start_color();			/* Start the color functionality */
 	cbreak();			/* Line buffering disabled, Pass on
 					 * everty thing to me 		*/
 	keypad(stdscr, TRUE);		/* I need that nifty F1 	*/
 	noecho();
-	init_pair(1, COLOR_CYAN, COLOR_BLACK);
+	Color::init_pair(1, Color::Cyan, Color::Black);
 
 	/* Initialize the window parameters */
 	init_win_params(&win);
