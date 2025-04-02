@@ -84,9 +84,9 @@ fn init_win_params() -> Window {
     }
 }
 
-fn print_win_params(&p_win)
+fn print_win_params(&p_win: Win)
 {
-#ifdef _DEBUG
+    if cfg!(Debug) 
 	mvprintw(25, 0, "%d %d %d %d", p_win->startx, p_win->starty, 
 				p_win->width, p_win->height);
 	refresh();
