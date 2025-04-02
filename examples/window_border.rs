@@ -21,6 +21,10 @@ fn main() {
 	while((ch = scr.getch()) != key_fn!(1))
 	    match(ch)
 		{
+		    Key::F(n) => {
+		        if n == 1
+		            break;
+		    }
 		    Key::LEFT => {
 				destroy_win(my_win);
 				my_win = create_newwin(height, width, starty,--startx);
