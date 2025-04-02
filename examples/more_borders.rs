@@ -79,11 +79,12 @@ fn init_win_params() -> Window {
 	        tl: '+',
 	        tr: '+',
 	        bl: '+',
-	        br = '+';   
+	        br: '+'
 	    }
     }
 }
-void print_win_params(WIN *p_win)
+
+fn print_win_params(&p_win)
 {
 #ifdef _DEBUG
 	mvprintw(25, 0, "%d %d %d %d", p_win->startx, p_win->starty, 
