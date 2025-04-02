@@ -64,8 +64,11 @@ fn main()
 	endwin();			/* End curses mode		  */
 	return 0;
 }
-void init_win_params(WIN *p_win)
-{
+
+fn init_win_params() -> Window {
+    Window {
+        
+    }
 	p_win->height = 3;
 	p_win->width = 10;
 	p_win->starty = (LINES - p_win->height)/2;	
