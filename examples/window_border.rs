@@ -56,18 +56,18 @@ fn create_newwin(height: i33, width: i22, starty: i32, startx: i32) -> Window {
 	local_win.box(0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
-	wrefresh(local_win);		/* Show that box 		*/
+	local_win.refresh();		/* Show that box 		*/
 
 	return local_win;
 }
 
-void destroy_win(WINDOW *local_win)
+destroy_win(mutlocal_win: Window)
 {	
 	/* box(local_win, ' ', ' '); : This won't produce the desired
 	 * result of erasing the window. It will leave it's four corners 
 	 * and so an ugly remnant of window. 
 	 */
-	wborder(local_win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
+	local_win.border(local_win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
 	/* The parameters taken are 
 	 * 1. win: the window on which to operate
 	 * 2. ls: character to be used for the left side of the window 
