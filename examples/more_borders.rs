@@ -31,10 +31,10 @@ fn main()
 	init_win_params(&win);
 	print_win_params(&win);
 
-	attron(COLOR_PAIR(1));
-	printw("Press F1 to exit");
-	refresh();
-	attroff(COLOR_PAIR(1));
+	scr.attr_on(Attr::color_pair(1))
+	    .print("Press F1 to exit")
+	    .refresh()
+	    .attroff(COLOR_PAIR(1));
 	
 	create_box(&win, TRUE);
 	while((ch = getch()) != KEY_F(1))
