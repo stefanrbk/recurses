@@ -87,12 +87,12 @@ fn init_win_params() -> Window {
 fn print_win_params(&mut scr: Window, &p_win: Win)
 {
     if cfg!(Debug) {
-	    scr.mvprint(25, 0, format!("{p_win.startx} {p_win.starty} {p_win.width p_win->height);
-	refresh();
+	    scr.mvprint(25, 0, format!("{p_win.startx} {p_win.starty} {p_win.width} {p_win.height}")
+	        .refresh();
 	}
-#endif
 }
-void create_box(WIN *p_win, bool flag)
+
+void create_box(scr: Window, WIN *p_win, bool flag)
 {	int i, j;
 	int x, y, w, h;
 
