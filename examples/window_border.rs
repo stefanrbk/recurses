@@ -3,7 +3,7 @@ fn main() {
 	int startx, starty;
 	int ch;
 
-	let scr = init_screen();			/* Start curses mode 		*/
+	let mut scr = init_screen();			/* Start curses mode 		*/
 	cbreak();			/* Line buffering disabled, Pass on
 					 * everty thing to me 		*/
 	keypad(stdscr, TRUE);		/* I need that nifty F1 	*/
@@ -16,6 +16,7 @@ fn main() {
 	    .refresh();
 	let mut my_win = create_newwin(height, width, starty, startx);
 
+    loop {
 	while((ch = scr.getch()) != key_fn!(1))
 	{
 	    match(ch)
