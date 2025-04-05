@@ -1,9 +1,11 @@
+use std::process;
+
 fn main() {
     let mut scr = init_screen();			/* Start curses mode 		*/
 	if !scr.has_colors() {	
 	    scr.close();
 		printf("Your terminal does not support color\n");
-		exit(1);
+		process::exit(1);
 	}
 	start_color();			/* Start color 			*/
 	init_pair(1, COLOR_RED, COLOR_BLACK);
