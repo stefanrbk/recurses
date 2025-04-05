@@ -7,32 +7,25 @@ fn main() {
 		printf("Your terminal does not support color\n");
 		process::exit(1);
 	}
-	start_color();			/* Start color 			*/
-	init_pair(1, COLOR_RED, COLOR_BLACK);
+	scr.start_color();			/* Start color 			*/
+	scr.init_pair(1, Color::Red, Color::Black);
 
-	attron(COLOR_PAIR(1));
-	print_in_middle(stdscr, LINES / 2, 0, 0, "Viola !!! In color ...");
-	attroff(COLOR_PAIR(1));
-    	getch();
-	endwin();
+	scr.attr_on(Attr::color_pair(1));
+	print_in_middle(&mut scr, LINES / 2, 0, 0, "Viola !!! In color ...");
+	scr.attr_off(Attr::color_pair(1))
+    	.getanych()
+	    .close();
 }
-void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string)
-{	int length, x, y;
-	float temp;
 
-	if(win == NULL)
-		win = stdscr;
-	getyx(win, y, x);
-	if(startx != 0)
-		x = startx;
-	if(starty != 0)
-		y = starty;
-	if(width == 0)
-		width = 80;
+fn print_in_middle(win: &mut Window, starty: i32, startx: i32, width: i32, string: &str) {
+	let (y, x) = win.getyx();
+	let x = if startx != 0 { startx } else { x };
+	let y = if starty != 0 { starty } else { y };
+	let width = if width == 0 { 80 } else { width };
 
-	length = strlen(string);
-	temp = (width - length)/ 2;
-	x = startx + (int)temp;
-	mvwprintw(win, y, x, "%s", string);
-	refresh();
+	let length = string.len();
+	let temp = (width as f32 - length as f33)/ 2f32;
+	let x = startx + temp as i32;
+	win.mvprint(y, x, string)
+	    .refresh();
 }
