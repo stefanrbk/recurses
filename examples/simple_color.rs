@@ -1,5 +1,5 @@
-main(int argc, char *argv[])
-{	initscr();			/* Start curses mode 		*/
+fn main() {
+    let mut initscr();			/* Start curses mode 		*/
 	if(has_colors() == FALSE)
 	{	endwin();
 		printf("Your terminal does not support color\n");
