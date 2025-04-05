@@ -102,7 +102,7 @@ fn print_win_params(scr: &mut Window, p_win: &Win)
 	}
 }
 
-fn create_box(win: &mut #include <stdio.h> int main() { return 0; }Window, &p_win: Win, flag: bool) {
+fn create_box(win: &mut Window, p_win: &Win, flag: bool) {
 	x = p_win.startx;
 	y = p_win.starty;
 	w = p_win.width;
