@@ -1,7 +1,7 @@
 fn main() {
     let mut scr = init_screen();			/* Start curses mode 		*/
-	if !scr.has_colors()
-	{	endwin();
+	if !scr.has_colors() {	
+	    scr.close();
 		printf("Your terminal does not support color\n");
 		exit(1);
 	}
