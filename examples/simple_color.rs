@@ -7,7 +7,7 @@ fn main() {
 		printf("Your terminal does not support color\n");
 		process::exit(1);
 	}
-	scr.start_color();			/* Start color 			*/
+	start_color();			/* Start color 			*/
 	init_pair(1, COLOR_RED, COLOR_BLACK);
 
 	attron(COLOR_PAIR(1));
