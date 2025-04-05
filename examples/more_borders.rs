@@ -42,32 +42,37 @@ fn main()
 		match ch
 		{	
 		    Key::F(n) => {
-		        break;
+		        if n == 1 {
+		            break;
+		        }
 		    }
-		    case KEY_LEFT:
-				create_box(&win, FALSE);
-				--win.startx;
-				create_box(&win, TRUE);
+		    Key::Left => {
+				create_box(&mut win, false);
+				win.startx -= 1;
+				create_box(&mut win, true);
 				break;
-			case KEY_RIGHT:
-				create_box(&win, FALSE);
-				++win.startx;
-				create_box(&win, TRUE);
+			}
+		    Key::Right => {
+				create_box(&mut win, false);
+				win.startx += 1;
+				create_box(&mut win, true);
 				break;
-			case KEY_UP:
-				create_box(&win, FALSE);
-				--win.starty;
-				create_box(&win, TRUE);
+			}
+		    Key::Up => {
+				create_box(&mut win, false);
+				win.starty -= 1;
+				create_box(&mut win, true);
 				break;
-			case KEY_DOWN:
-				create_box(&win, FALSE);
-				++win.starty;
-				create_box(&win, TRUE);
-				break;	
+			}
+		    Key::Down => {
+				create_box(&mut win, false);
+				win.starty += 1;
+				create_box(&mut win, true);
+				break;
+			}
 		}
 	}
-	endwin();			/* End curses mode		  */
-	return 0;
+	scr.Close();			/* End curses mode		  */
 }
 
 fn init_win_params() -> Window {
