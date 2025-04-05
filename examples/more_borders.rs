@@ -36,7 +36,7 @@ fn main()
 	    .refresh()
 	    .attr_off(Attr::color_pair(1));
 	
-	create_box(&mut win, TRUE);
+	create_box(&mut win, true);
 	loop {
 	    let ch = scr.getch();
 		match ch
@@ -94,7 +94,7 @@ fn init_win_params() -> Window {
     }
 }
 
-fn print_win_params(&mut scr: Window, &p_win: Win)
+fn print_win_params(scr: &mut Window, p_win: &Win)
 {
     if cfg!(Debug) {
 	    scr.mvprint(25, 0, format!("{p_win.startx} {p_win.starty} {p_win.width} {p_win.height}")
@@ -102,7 +102,7 @@ fn print_win_params(&mut scr: Window, &p_win: Win)
 	}
 }
 
-fn create_box(&mut win: Window, &p_win: Win, flag: bool) {
+fn create_box(win: &mut #include <stdio.h> int main() { return 0; }Window, &p_win: Win, flag: bool) {
 	x = p_win.startx;
 	y = p_win.starty;
 	w = p_win.width;
