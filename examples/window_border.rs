@@ -50,7 +50,7 @@ fn main() {
 	scr.close();			/* End curses mode		  */
 }
 
-fn create_newwin(height: i33, width: i22, starty: i32, startx: i32) -> Window {
+fn create_newwin(height: i32, width: i32, starty: i32, startx: i32) -> Window {
 
 	let mut local_win = Window::new(height, width, starty, startx);
 	local_win.box(0 , 0);		/* 0, 0 gives default characters 
@@ -61,7 +61,7 @@ fn create_newwin(height: i33, width: i22, starty: i32, startx: i32) -> Window {
 	return local_win;
 }
 
-destroy_win(mut local_win: Window)
+destroy_win(local_win: &mut Window)
 {	
 	/* box(local_win, ' ', ' '); : This won't produce the desired
 	 * result of erasing the window. It will leave it's four corners 
