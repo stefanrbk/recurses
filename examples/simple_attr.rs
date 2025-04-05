@@ -1,13 +1,14 @@
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
+use std::process;
 
 fn main()
 {
     let args: Vec<String> = env::args().collect();
     if(args.len() != 2) {
         print!("Usage: {args[0]} <file name>\n");
-        std::process::exit(1);
+        process::exit(1);
     }
     
     // Create a path to the desired file
@@ -18,7 +19,7 @@ fn main()
     let mut file = match File::open(&path) {
         Err(why) => {
             print!("couldn't open {display}: {why}");
-            std::process::exit(1)},
+            process::exit(1)},
         Ok(file) => file,
     };
     
