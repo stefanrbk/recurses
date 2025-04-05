@@ -28,7 +28,7 @@ fn main()
 	Color::init_pair(1, Color::Cyan, Color::Black);
 
 	/* Initialize the window parameters */
-	init_win_params(&win);
+	let mut win = init_win_params();
 	print_win_params(&win);
 
 	scr.attr_on(Attr::color_pair(1))
@@ -36,10 +36,15 @@ fn main()
 	    .refresh()
 	    .attr_off(Attr::color_pair(1));
 	
-	create_box(&win, TRUE);
-	while((ch = getch()) != KEY_F(1))
-	{	switch(ch)
-		{	case KEY_LEFT:
+	create_box(&mut win, TRUE);
+	loop {
+	    let ch = scr.getch();
+		match ch
+		{	
+		    Key::F(n) => {
+		        break;
+		    }
+		    case KEY_LEFT:
 				create_box(&win, FALSE);
 				--win.startx;
 				create_box(&win, TRUE);
@@ -92,28 +97,28 @@ fn print_win_params(&mut scr: Window, &p_win: Win)
 	}
 }
 
-fn create_box(&mut scr: Window, &p_win: Win, flag: bool) {
+fn create_box(&mut win: Window, &p_win: Win, flag: bool) {
 	x = p_win.startx;
 	y = p_win.starty;
 	w = p_win.width;
 	h = p_win.height;
 
 	if flag	{
-	    scr.mvaddch(y, x, p_win.border.tl);
+	    win.mvaddch(y, x, p_win.border.tl);
 		    .mvaddch(y, x + w, p_win.border.tr);
-		    .mvaddch(y + h, x, p_win->border.bl);
-		mvaddch(y + h, x + w, p_win->border.br);
-		mvhline(y, x + 1, p_win->border.ts, w - 1);
-		mvhline(y + h, x + 1, p_win->border.bs, w - 1);
-		mvvline(y + 1, x, p_win->border.ls, h - 1);
-		mvvline(y + 1, x + w, p_win->border.rs, h - 1);
+		    .mvaddch(y + h, x, p_win.border.bl);
+		    .mvaddch(y + h, x + w, p_win.border.br);
+		    .mvhline(y, x + 1, p_win.border.ts, w - 1);
+		    .mvhline(y + h, x + 1, p_win.border.bs, w - 1);
+		    .mvvline(y + 1, x, p_win.border.ls, h - 1);
+		    .mvvline(y + 1, x + w, p_win.border.rs, h - 1);
 
 	}
 	else
-		for(j = y; j <= y + h; ++j)
-			for(i = x; i <= x + w; ++i)
-				mvaddch(j, i, ' ');
+		for j in y..=(y + h)
+			for i in x..=(x + w)
+				win.mvaddch(j, i, ' ');
 				
-	refresh();
+	win.refresh();
 
 }
