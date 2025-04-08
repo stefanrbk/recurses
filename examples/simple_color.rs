@@ -24,7 +24,7 @@ fn print_in_middle(win: &mut Window, starty: i32, startx: i32, width: i32, strin
 	let width = if width == 0 { 80 } else { width };
 
 	let length = string.len();
-	let temp = (width as f32 - length as f33)/ 2f32;
+	let temp = (width as f32 - length as f32)/ 2f32;
 	let x = startx + temp as i32;
 	win.mvprint(y, x, string)
 	    .refresh();
