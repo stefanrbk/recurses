@@ -1,3 +1,7 @@
 pub struct Terminal;
 
-impl Terminal
+impl Terminal {
+    pub fn init_screen() -> Screen {
+        to
+    }
+}
